@@ -11,8 +11,11 @@ import pandas as pd
 import os
 
 # Set cleaned data directory
-cleaned_data_dir = "/Users/mac/ALL_PYTHON_PROJECTS/clean_my_csv_serology/cleaned_data"
-os.makedirs(cleaned_data_dir, exist_ok=True)
+import tempfile
+
+# Use a temporary directory for saving cleaned files
+cleaned_data_dir = tempfile.mkdtemp()
+
 
 st.title("🔬 Hep A IgM CSV Cleaner")
 st.write("Upload your raw CSV file, and this tool will clean and export it.")
